@@ -1,5 +1,6 @@
 require ( './root.js' );
 
+const { it } = require('mocha');
 const { name, height, message } = require("../index.js");
 
 /*
@@ -29,10 +30,19 @@ describe('what-is-a-test', () => {
 // The code below ensures that students who are using CodeGrade will get credit 
 // for the code-along in Canvas; you can disregard it.
 
-describe('', () => {
-  describe('', () => {
-    it('', () => {
-      return true;
-    })
-  })
-})
+describe("Name", () => {
+  it('returns "Susan"',()=>{
+     expect(name).toequal("Susan")
+  });
+});
+  describe('Height', () => {
+    it('is less than 40', () => {
+      expect(height).ToBeLessThan(40);
+    });
+  });
+describe("message",() => {
+  it("gives the name and height", () => {
+     expect(message).toInclude(name);
+     expect(message).toInclude(height);
+  });
+});
